@@ -2,8 +2,12 @@ import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
 function App() {
-  let post = '강남 우동 맛집';
-  let [a, b] = useState('남자코트추천');
+  let [blogName, setBlogName] = useState([
+    '남자코트추천',
+    '여자코트추천',
+    '아동복추천',
+  ]);
+  let [wishCount, setWishCount] = useState(0);
 
   return (
     <div className="App">
@@ -11,7 +15,48 @@ function App() {
         <h4>블로그</h4>
       </div>
       <div className="list">
-        <h4>{a}</h4>
+        <h4>
+          {blogName}{' '}
+          <span
+            style={{ cursor: 'pointer' }}
+            onClick={() => {
+              setWishCount(wishCount + 1);
+            }}
+          >
+            🧡
+          </span>
+          {wishCount}
+        </h4>
+        <p>날짜</p>
+      </div>
+      <div className="list">
+        <h4>
+          {blogName}{' '}
+          <span
+            style={{ cursor: 'pointer' }}
+            onClick={() => {
+              setWishCount(wishCount + 1);
+            }}
+          >
+            🧡
+          </span>
+          {wishCount}
+        </h4>
+        <p>날짜</p>
+      </div>
+      <div className="list">
+        <h4>
+          {blogName}{' '}
+          <span
+            style={{ cursor: 'pointer' }}
+            onClick={() => {
+              setWishCount(wishCount + 1);
+            }}
+          >
+            🧡
+          </span>
+          {wishCount}
+        </h4>
         <p>날짜</p>
       </div>
     </div>
